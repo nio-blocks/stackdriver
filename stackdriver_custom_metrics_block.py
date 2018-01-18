@@ -6,7 +6,7 @@ from nio.properties import VersionProperty, FloatProperty, StringProperty
 
 class StackdriverCustomMetrics(TerminatorBlock):
 
-    version = VersionProperty('0.1.0')
+    version = VersionProperty("0.1.0")
     value = FloatProperty(title='Value', default='{{ $value }}')
     metric_type = StringProperty(
         title='Metric Type', default='custom.googleapis.com/metric')
