@@ -1,11 +1,11 @@
 from google.cloud import monitoring
 from google.oauth2 import service_account
-from nio.block.base import Block
+from nio import TerminatorBlock
 from nio.properties import VersionProperty, FloatProperty, StringProperty
 # google.auth.exceptions.DefaultCredentialsError
 
 
-class StackdriverCustomMetrics(Block):
+class StackdriverCustomMetrics(TerminatorBlock):
 
     version = VersionProperty('0.1.0')
     value = FloatProperty(title='Value', default='{{ $value }}')
