@@ -1,40 +1,34 @@
 {
-  "namespace/BlockName": {
-    "version": "1.0.0",
-    "description": "Description of the block.",
+  "nio/StackdriverCustomMetrics": {
+    "version": "0.1.0",
+    "description": "Write custom metrics to Google Stackdriver. https://cloud.google.com/monitoring/custom-metrics/creating-metrics#monitoring-write-timeseries-protocol",
+    "categories": [],
     "properties": {
-      "<property1>": {
-        "description": "Required description of the property"
+      "metric_type": {
+        "title": "Metric Type",
+        "type": "StringType",
+        "description": "The metric type to write the value to. Custom metrics must begin with 'custom.googleapis.com/'. If the metric type does not exist yet, it will be create in the Global resource.",
+        "default": "custom.googleapis.com/metric"
       },
-      "<property2>": {
-        "default": "Optional metadata with any key.",
-        "description": "Required description of the property"
+      "service_account_file": {
+        "title": "Service Account File",
+        "type": "StringType",
+        "description": "To authenticate with the Google Stackdriver project, generate a service account private key. Download the json file and configure this property to the location of it. https://cloud.google.com/storage/docs/authentication#generating-a-private-key",
+        "default": "[[PROJECT_ROOT]]/project-abcd1234.json"
+      },
+      "value": {
+        "title": "Value",
+        "type": "FloatType",
+        "description": "The floating point value to write to Stackdriver.",
+        "default": "{{ $value }}"
       }
     },
     "inputs": {
-      "<input1 | default>": {
-        "description": "Required description of the input"
-      },
-      "<input2>": {
-        "description": "Required description of the input"
+      "default": {
+        "description": "Signals that contain the value to write to Stackdriver."
       }
     },
-    "outputs": {
-      "<output1 | default>": {
-        "description": "Required description of the output"
-      },
-      "<output2>": {
-        "description": "Required description of the output"
-      }
-    },
-    "commands": {
-      "<command1>": {
-        "description": "Required description of the command",
-        "type": "Optional type and other metadata with any key."
-      },
-      "<command2>": {
-        "description": "Required description of the command"
-      }
-    }
+    "outputs": {},
+    "commands": {}
   }
 }
