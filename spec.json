@@ -2,7 +2,7 @@
   "nio/StackdriverCustomMetrics": {
     "version": "0.1.0",
     "description": "Write custom metrics to Google Stackdriver. https://cloud.google.com/monitoring/custom-metrics/creating-metrics#monitoring-write-timeseries-protocol",
-    "categories": [],
+    "categories": ["Web Data"],
     "properties": {
       "metric_type": {
         "title": "Metric Type",
