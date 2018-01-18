@@ -29,7 +29,12 @@ class TestStackdriverCustomMetrics(NIOBlockTestCase):
         self.assert_num_signals_notified(0)
         monitoring.Client.from_service_account_json.assert_called_once_with(
             json_credentials_path=filename)
-        client.metric.assert_called_once_with(type_=metric_type, labels={})
+        client.metric.assert_called_once_with(type_=metric_type, labels={
+            # Specify this label shouldn't be required but it seems to help.
+            # For some reason, the resource type is not being set to 'global'
+            # reliably without it.
+            'resource_type': 'global',
+        })
         client.resource.assert_called_once_with('global', labels={})
         return client, metric, resource
 

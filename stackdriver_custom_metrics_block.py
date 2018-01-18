@@ -19,7 +19,9 @@ class StackdriverCustomMetrics(Block):
     def process_signals(self, signals):
         client = monitoring.Client.from_service_account_json(
             json_credentials_path=self.service_account_file())
-        metric = client.metric(type_=self.metric_type(), labels={})
+        metric = client.metric(type_=self.metric_type(), labels={
+            'resource_type': 'global',
+        })
         resource = client.resource('global', labels={})
         for signal in signals:
             self.logger.debug('Write {} to {}'.format(
