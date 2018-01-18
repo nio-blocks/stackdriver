@@ -2,7 +2,6 @@ from google.cloud import monitoring
 from google.oauth2 import service_account
 from nio import TerminatorBlock
 from nio.properties import VersionProperty, FloatProperty, StringProperty
-# google.auth.exceptions.DefaultCredentialsError
 
 
 class StackdriverCustomMetrics(TerminatorBlock):
