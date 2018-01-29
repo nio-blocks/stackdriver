@@ -9,7 +9,7 @@
       "metric_type": {
         "title": "Metric Type",
         "type": "StringType",
-        "description": "The metric type to write the value to. Custom metrics must begin with 'custom.googleapis.com/'. If the metric type does not exist yet, it will be create in the Global resource.",
+        "description": "The metric type to write the value to. Custom metrics must begin with `custom.googleapis.com/`. If the metric type does not exist yet, it will be created in the Global resource.",
         "default": "custom.googleapis.com/metric"
       },
       "service_account_file": {
